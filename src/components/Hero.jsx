@@ -5,7 +5,7 @@ function Hero() {
     <section className="hero" id="top">
       <div className="container hero-content">
         <p className="eyebrow">Websites &amp; interfaces for people with something to share</p>
-        <h1>Responsive websites for people with something to share.</h1>
+        <h1>Clean and responsive websites. Affordable.</h1>
         <p className="hero-text">I&apos;m Nicholas. I build clear, usable interfaces for the web.</p>
         <div className="hero-actions">
           <Link className="button button-primary" to="/" state={{ scrollTo: 'projects' }}>View projects <span aria-hidden="true">↗</span></Link>
