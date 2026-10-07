@@ -1,16 +1,23 @@
-# React + Vite
+# Nicholas — portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An existing React portfolio, refined with plain CSS and project pages. Vite provides the development and build tooling; React Router handles the home and three project routes.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `npm install`
+- `npm run dev`
+- `npm run lint`
+- `npm run build` (output: `dist`)
 
-## React Compiler
+## Content and styling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- This site is a teaching demonstration. Morning Notes, Local Finds, and Study Space are screenshot-based interface examples, with copy describing their visible designs.
+- Names, screenshots, route slugs, descriptions, and tools live together in `src/pages/projects.js`. Home and detail pages share this data.
+- Technology notes describe this portfolio's actual React, Vite, and CSS presentation. They do not claim that the pictured interfaces are separately implemented applications.
+- GitHub, LinkedIn, and X logos in the contact section are accessible display icons. No personal contact details or inactive links are included.
+- All design tokens live once in `src/index.css`; layout and responsive rules are in the existing `src/App.css`.
+- `index.html` references `public/favicon.png` as `/favicon.png`.
 
-## Expanding the ESLint configuration
+`public/_redirects` provides the single-page application fallback for Netlify. No `netlify.toml` is included. Deployment configuration is left for the live session.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Existing unused SVG filenames are retained to preserve the folder structure; their starter graphics have been replaced with neutral portfolio assets.

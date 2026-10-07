@@ -1,36 +1,23 @@
-function Projects() {
-  const projects = [
-    { title: 'Morning Notes', description: 'A calm space for collecting thoughts, plans, and small daily wins.', tags: ['React', 'CSS'] },
-    { title: 'Local Finds', description: 'A simple guide that helps people discover interesting places nearby.', tags: ['JavaScript', 'HTML'] },
-    { title: 'Study Space', description: 'A focused dashboard for keeping learning goals visible and organized.', tags: ['Vite', 'Responsive'] },
-  ]
+import { Link } from 'react-router-dom'
+import { projects } from '../pages/projects'
 
+function Projects() {
   return (
     <section className="section" id="projects">
       <div className="container">
         <div className="section-heading projects-heading">
-          <div>
-            <p className="eyebrow">Selected practice</p>
-            <h2>Small projects, thoughtful details.</h2>
-          </div>
-          <p>Here are a few ideas I have brought to life while learning.</p>
+          <div><p className="eyebrow">Selected projects</p><h2>Ideas, made visible.</h2></div>
+          <p>A closer look at the interfaces, tools, and decisions behind each project.</p>
         </div>
         <div className="project-grid">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <article className="project-card" key={project.title}>
-              <div className={`project-banner project-banner-${index + 1}`}><span>0{index + 1}</span></div>
+              <img className="project-banner" src={project.image} alt={`${project.title} screenshot`} loading="lazy" />
               <div className="project-content">
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
-                <a className="text-link" href="#contact">
-                  <span>View project</span>
-                  <svg viewBox="0 0 14 14" aria-hidden="true">
-                    <path d="M2 7h9M8 3l4 4-4 4" />
-                  </svg>
-                </a>
+                <p>{project.summary}</p>
+                <div className="project-tags">{project.tools.map((tool) => <span className="tag" key={tool}>{tool}</span>)}</div>
+                <Link className="text-link" to={`/projects/${project.slug}`}><span>View project</span><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h9M8 3l4 4-4 4" /></svg></Link>
               </div>
             </article>
           ))}
@@ -39,5 +26,4 @@ function Projects() {
     </section>
   )
 }
-
 export default Projects
